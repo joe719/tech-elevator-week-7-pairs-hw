@@ -67,5 +67,10 @@ public class CatController {
 		return random;
 
 	}
+	
+	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
+	public boolean delete(@RequestBody long id) {
+		return catCardDao.delete(id);
+	}
 
 }
