@@ -5,6 +5,7 @@ import com.techelevator.model.CatCardDAO;
 import com.techelevator.model.CatCardNotFoundException;
 import com.techelevator.model.CatFact;
 import com.techelevator.model.CatPic;
+import com.techelevator.reservations.models.Reservation;
 import com.techelevator.services.CatFactService;
 import com.techelevator.services.CatPicService;
 import org.springframework.http.HttpStatus;
@@ -39,26 +40,10 @@ public class CatController {
     	
     }
     
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    @RequestMapping( path = "", method = RequestMethod.POST)
+    public boolean save(@RequestBody CatCard cardToSave) {
+        return catCardDao.save(cardToSave);
+    }
     
     
     @RequestMapping (path = "/{id}", method = RequestMethod.PUT)
@@ -67,5 +52,4 @@ public class CatController {
 	   return catCardDao.update(id, card);
 	
 }
-
 }
