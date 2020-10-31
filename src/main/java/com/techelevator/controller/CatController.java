@@ -8,7 +8,7 @@ import com.techelevator.model.CatPic;
 
 import com.techelevator.services.CatFactService;
 import com.techelevator.services.CatPicService;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatus; 
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -40,8 +40,9 @@ public class CatController {
 
 	}
 
+	@ResponseStatus(HttpStatus.CREATED)
 	@RequestMapping(path = "", method = RequestMethod.POST)
-	public boolean save(@RequestBody CatCard cardToSave) {
+	public boolean save(@Valid @RequestBody CatCard cardToSave) {
 		return catCardDao.save(cardToSave);
 	}
 
@@ -67,9 +68,9 @@ public class CatController {
 		return random;
 
 	}
-	
+	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
-	public boolean delete(@RequestBody long id) {
+	public boolean delete(@PathVariable long id) {
 		return catCardDao.delete(id);
 	}
 
