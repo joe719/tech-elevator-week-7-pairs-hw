@@ -35,7 +35,7 @@ public class CatController {
 	}
 
 	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
-	public CatCard get(@PathVariable long id) {
+	public CatCard get(@PathVariable long id) throws CatCardNotFoundException {
 		return catCardDao.get(id);
 
 	}
@@ -70,7 +70,7 @@ public class CatController {
 	}
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
-	public boolean delete(@PathVariable long id) {
+	public boolean delete(@PathVariable long id) throws CatCardNotFoundException {
 		return catCardDao.delete(id);
 	}
 
