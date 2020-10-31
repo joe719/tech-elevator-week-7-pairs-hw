@@ -4,6 +4,7 @@ import com.techelevator.model.CatCard;
 import com.techelevator.model.CatCardDAO;
 import com.techelevator.model.CatFact;
 import com.techelevator.model.CatPic;
+import com.techelevator.reservations.models.Reservation;
 import com.techelevator.services.CatFactService;
 import com.techelevator.services.CatPicService;
 import org.springframework.http.HttpStatus;
@@ -38,7 +39,10 @@ public class CatController {
     	
     }
     
+    @RequestMapping( path = "", method = RequestMethod.POST)
+    public boolean save(@RequestBody CatCard cardToSave) {
+        return catCardDao.save(cardToSave);
+
+    }
     
-
-
 }
