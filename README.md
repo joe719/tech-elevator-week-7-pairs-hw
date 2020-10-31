@@ -10,7 +10,7 @@ The Frontend team developed their part of the application. However, they need yo
 * `GET /api/cards/{id}`: Provides a Cat Card with the given ID.
 * `GET /api/cards/random`: Provides a new, randomly created Cat Card containing information from the cat fact and picture services.
 * `POST /api/cards`: Saves a card to the user's collection.
-* `PUT /api/cards`: Updates a card in the user's collection.
+* `PUT /api/cards/{id}`: Updates a card in the user's collection.
 * `DELETE /api/cards`: Removes a card from the user's collection.
 
 ### Cat Card JSON object structure

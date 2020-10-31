@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import com.techelevator.model.CatCard;
 import com.techelevator.model.CatCardDAO;
+import com.techelevator.model.CatCardNotFoundException;
 import com.techelevator.model.CatFact;
 import com.techelevator.model.CatPic;
 import com.techelevator.services.CatFactService;
@@ -32,7 +33,7 @@ public class CatController {
     	return catCardDao.list();
     	
     }
-    @RequestMapping(path ="{id}", method = RequestMethod.GET)
+    @RequestMapping(path ="/{id}", method = RequestMethod.GET)
     public CatCard get(@PathVariable long id){
     	return catCardDao.get(id);
     	
@@ -40,5 +41,31 @@ public class CatController {
     
     
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    @RequestMapping (path = "/{id}", method = RequestMethod.PUT)
+   public boolean update(@PathVariable long id, @Valid @RequestBody CatCard card) throws CatCardNotFoundException {
+	   
+	   return catCardDao.update(id, card);
+	
+}
 
 }
