@@ -39,5 +39,14 @@ public class CatCard {
 	public void setCaption(String caption) {
 		this.caption = caption;
 	}
+	@Override
+	public String toString() {
+		String jsonFormat = " \n   \"id\" : "+ catCardId+
+				" \n   \"imgUrl\" : " +imgUrl + 
+				" \n   \"fact\" : "+catFact+ 
+				" \n   \"caption\" : "+caption+"\n";
+		return jsonFormat;
+	}
+	
 	
 }
